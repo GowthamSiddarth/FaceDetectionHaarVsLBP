@@ -15,3 +15,8 @@ haar_cascade_face_detector = cv2.CascadeClassifier('venv/Lib/site-packages/cv2/d
 faces = haar_cascade_face_detector.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=5)
 print(len(faces))
 
+for (x, y, w, h) in faces:
+    cv2.rectangle(test1, (x, y), (x+w, y+h), color=(0, 255, 0), thickness=2)
+
+plt.imshow(convertToRGB(test1))
+plt.show()
